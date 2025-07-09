@@ -1,0 +1,169 @@
+﻿@page "/data"
+@using SignalR.Services
+@using SignalR.Models
+@rendermode InteractiveServer
+
+<h3>Candle Data - Multiple Symbols</h3>
+
+<SignalR.Client.Pages.Chat></SignalR.Client.Pages.Chat>
+
+
+<div class="mb-3">
+    <label><b>Chọn khung thời gian:</b></label>
+    <select class="form-select w-auto d-inline-block ms-2" @onchange="OnIntervalChanged">
+        @foreach (var interval in Intervals)
+        {
+            <option value="@interval">@interval</option>
+        }
+    </select>
+</div>
+<div class="row">
+@foreach (var symbol in Symbols)
+{
+    <div class="card m-2 p-2 border rounded shadow-sm col-3">
+        <h4>@symbol</h4>
+
+            @if (LatestCandles.TryGetValue(symbol, out var candle))
+            {
+                <ul>
+                    <li><b>Time:</b> @candle.Timestamp</li>
+
+                    <li>
+                        <b>Open:</b> @candle.Open
+                        @if (PreviousCandles.TryGetValue(symbol, out var prev))
+                        {
+                            @Compare(candle.Open, prev.Open)
+                        }
+                    </li>
+
+                    <li>
+                        <b>High:</b> @candle.High
+                        @if (PreviousCandles.TryGetValue(symbol, out var prevh))
+                        {
+                            @Compare(candle.High, prevh.High)
+                        }
+                    </li>
+
+                    <li>
+                        <b>Low:</b> @candle.Low
+                        @if (PreviousCandles.TryGetValue(symbol, out var prevl))
+                        {
+                            @Compare(candle.Low, prevl.Low)
+                        }
+                    </li>
+
+                    <li>
+                        <b>Close:</b> @candle.Close
+                        @if (PreviousCandles.TryGetValue(symbol, out var prevc))
+                        {
+                            @Compare(candle.Close, prevc.Close)
+                        }
+                    </li>
+
+                    <li>
+                        <b>Volume:</b> @candle.VolumeBase
+                        @if (PreviousCandles.TryGetValue(symbol, out var prevv))
+                        {
+                            @Compare(candle.VolumeBase, prevv.VolumeBase)
+                        }
+                    </li>
+                </ul>
+            }
+
+
+        else
+        {
+            <p>Đang chờ dữ liệu...</p>
+        }
+    </div>
+}
+</div>
+@code {
+    [Inject] WebSocketServices WebSocketService { get; set; }
+
+    // Dữ liệu giá trước đó theo symbol
+    Dictionary<string, CandleData> PreviousCandles = new();
+    // Danh sách các coin muốn theo dõi
+    // Các khung thời gian hỗ trợ (ví dụ từ sàn)
+    List<string> Intervals = new() { "1s", "1m", "3m", "5m", "15m", "30m", "1H", "2H", "4H", "6H", "12H" , "1D", "2D", "3D", "5D", "1W", "1M", "3M" };
+    string SelectedInterval = "1s";
+
+    List<string> Symbols = new() { "BTC-USDT", "ETH-USDT", "SOL-USDT", "DOGE-USDT", "XAUT-USDT" };
+
+    // Dữ liệu mới nhất theo từng symbol
+    Dictionary<string, CandleData> LatestCandles = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        foreach (var symbol in Symbols)
+        {
+            string capturedSymbol = symbol;
+
+            WebSocketService.Subscribe(capturedSymbol, candle =>
+            {
+                if (LatestCandles.TryGetValue(capturedSymbol, out var currentCandle))
+                {
+                    PreviousCandles[capturedSymbol] = currentCandle;
+                }
+
+                LatestCandles[capturedSymbol] = candle;
+                InvokeAsync(StateHasChanged);
+            });
+
+            await WebSocketService.ConnectAsync(capturedSymbol, "1s");
+        }
+    }
+    private async Task OnIntervalChanged(ChangeEventArgs e)
+    {
+        var newInterval = e.Value?.ToString();
+        if (string.IsNullOrEmpty(newInterval) || newInterval == SelectedInterval)
+            return;
+
+        SelectedInterval = newInterval;
+
+        // Clear dữ liệu cũ
+        LatestCandles.Clear();
+        PreviousCandles.Clear();
+
+        // Hủy đăng ký cũ (nếu có)
+        await WebSocketService.DisconnectAllAsync(); // <- Bạn cần định nghĩa hàm này trong WebSocketService
+
+        // Đăng ký lại theo khung thời gian mới
+        foreach (var symbol in Symbols)
+        {
+            string capturedSymbol = symbol;
+
+            WebSocketService.Subscribe(capturedSymbol, candle =>
+            {
+                if (LatestCandles.TryGetValue(capturedSymbol, out var current))
+                {
+                    PreviousCandles[capturedSymbol] = current;
+                }
+
+                LatestCandles[capturedSymbol] = candle;
+                InvokeAsync(StateHasChanged);
+            });
+
+            await WebSocketService.ConnectAsync(capturedSymbol, SelectedInterval);
+        }
+    }
+
+    private MarkupString Compare(decimal current, decimal previous)
+    {
+        if (previous == 0)
+        {
+            return new MarkupString("<span class='text-muted'>(N/A)</span>");
+        }
+
+        var diff = current - previous;
+        var percent = (diff / previous) * 100;
+        string formatted = $"{(diff > 0 ? "▲" : diff < 0 ? "▼" : "–")} {Math.Abs(diff):0.####} ({Math.Abs(percent):0.##}%)";
+
+        if (diff > 0)
+            return new MarkupString($"<span class='text-success'>{formatted}</span>");
+        else if (diff < 0)
+            return new MarkupString($"<span class='text-danger'>{formatted}</span>");
+        else
+            return new MarkupString($"<span class='text-secondary'>{formatted}</span>");
+    }
+}

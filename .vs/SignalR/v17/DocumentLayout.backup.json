@@ -1,0 +1,128 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Temp\\SignalR\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1281671B-840B-432F-9877-51E0FD85CEAF}|SignalR\\SignalR\\SignalR.csproj|d:\\temp\\signalr\\signalr\\signalr\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1281671B-840B-432F-9877-51E0FD85CEAF}|SignalR\\SignalR\\SignalR.csproj|solutionrelative:signalr\\signalr\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1281671B-840B-432F-9877-51E0FD85CEAF}|SignalR\\SignalR\\SignalR.csproj|d:\\temp\\signalr\\signalr\\signalr\\services\\websocketservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1281671B-840B-432F-9877-51E0FD85CEAF}|SignalR\\SignalR\\SignalR.csproj|solutionrelative:signalr\\signalr\\services\\websocketservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1281671B-840B-432F-9877-51E0FD85CEAF}|SignalR\\SignalR\\SignalR.csproj|d:\\temp\\signalr\\signalr\\signalr\\services\\weatherget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1281671B-840B-432F-9877-51E0FD85CEAF}|SignalR\\SignalR\\SignalR.csproj|solutionrelative:signalr\\signalr\\services\\weatherget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3D6ABB-BE4F-4C4D-99D3-3F4256768EB6}|SignalR\\SignalR.Client\\SignalR.Client.csproj|d:\\temp\\signalr\\signalr\\signalr.client\\pages\\chat.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB3D6ABB-BE4F-4C4D-99D3-3F4256768EB6}|SignalR\\SignalR.Client\\SignalR.Client.csproj|solutionrelative:signalr\\signalr.client\\pages\\chat.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1281671B-840B-432F-9877-51E0FD85CEAF}|SignalR\\SignalR\\SignalR.csproj|d:\\temp\\signalr\\signalr\\signalr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1281671B-840B-432F-9877-51E0FD85CEAF}|SignalR\\SignalR\\SignalR.csproj|solutionrelative:signalr\\signalr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1281671B-840B-432F-9877-51E0FD85CEAF}|SignalR\\SignalR\\SignalR.csproj|d:\\temp\\signalr\\signalr\\signalr\\components\\datacomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1281671B-840B-432F-9877-51E0FD85CEAF}|SignalR\\SignalR\\SignalR.csproj|solutionrelative:signalr\\signalr\\components\\datacomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebSocketServices.cs",
+              "DocumentMoniker": "D:\\Temp\\SignalR\\SignalR\\SignalR\\Services\\WebSocketServices.cs",
+              "RelativeDocumentMoniker": "SignalR\\SignalR\\Services\\WebSocketServices.cs",
+              "ToolTip": "D:\\Temp\\SignalR\\SignalR\\SignalR\\Services\\WebSocketServices.cs",
+              "RelativeToolTip": "SignalR\\SignalR\\Services\\WebSocketServices.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T07:32:18.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "D:\\Temp\\SignalR\\SignalR\\SignalR\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "SignalR\\SignalR\\Hubs\\ChatHub.cs",
+              "ToolTip": "D:\\Temp\\SignalR\\SignalR\\SignalR\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "SignalR\\SignalR\\Hubs\\ChatHub.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwDIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T04:28:52.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Temp\\SignalR\\SignalR\\SignalR\\Program.cs",
+              "RelativeDocumentMoniker": "SignalR\\SignalR\\Program.cs",
+              "ToolTip": "D:\\Temp\\SignalR\\SignalR\\SignalR\\Program.cs",
+              "RelativeToolTip": "SignalR\\SignalR\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T03:44:41.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Chat.razor",
+              "DocumentMoniker": "D:\\Temp\\SignalR\\SignalR\\SignalR.Client\\Pages\\Chat.razor",
+              "RelativeDocumentMoniker": "SignalR\\SignalR.Client\\Pages\\Chat.razor",
+              "ToolTip": "D:\\Temp\\SignalR\\SignalR\\SignalR.Client\\Pages\\Chat.razor",
+              "RelativeToolTip": "SignalR\\SignalR.Client\\Pages\\Chat.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-11T03:37:26.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherGet.cs",
+              "DocumentMoniker": "D:\\Temp\\SignalR\\SignalR\\SignalR\\Services\\WeatherGet.cs",
+              "RelativeDocumentMoniker": "SignalR\\SignalR\\Services\\WeatherGet.cs",
+              "ToolTip": "D:\\Temp\\SignalR\\SignalR\\SignalR\\Services\\WeatherGet.cs",
+              "RelativeToolTip": "SignalR\\SignalR\\Services\\WeatherGet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T03:37:29.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DataComponent.razor",
+              "DocumentMoniker": "D:\\Temp\\SignalR\\SignalR\\SignalR\\Components\\DataComponent.razor",
+              "RelativeDocumentMoniker": "SignalR\\SignalR\\Components\\DataComponent.razor",
+              "ToolTip": "D:\\Temp\\SignalR\\SignalR\\SignalR\\Components\\DataComponent.razor",
+              "RelativeToolTip": "SignalR\\SignalR\\Components\\DataComponent.razor",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFcAAACTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-11T03:36:38.389Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
